@@ -1,0 +1,10 @@
+Sedoh
+114
+F
+{'Principal': ['Honest', 'Generous'], 'Secundaria': None}
+18
+Patriarca
+None
+None
+['T', 'T', 'M', '_', '_', '_'] 
+ ['_', '_', 'T', '_', 'T', 'S']

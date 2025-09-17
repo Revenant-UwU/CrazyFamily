@@ -1,0 +1,80 @@
+------------------------------------------------------------
+1
+son of 0 and 1
+
+ADN: 
+   ['F', '_', 'F', '_', '_'] 
+ ['_', 'T', '_', 'T', 'S']
+
+Genome: 
+   ['F', 'T', 'F', 'T', 'S']
+
+Potential genes: 
+    ['Generous', 'Brave', 'Focused']
+
+Selected genes: 
+    (['Brave', 'Generous'], ['Focused'])
+------------------------------------------------------------
+2
+son of 1 wiht itself
+
+ADN: 
+   ['F', '_', 'F', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'F', 'T', '_', 'T', 'S']
+
+Genome: 
+   ['T', 'T', 'T', 'T', 'T', 'F', 'S', 'S', 'T', 'F', 'F', 'T', 'T', 'T', 'T', 'S', '|', 'F', '_', 'F', 'F', 'T', '_', 'T', 'S']
+
+Potential genes: 
+    ['Generous', 'Brave', 'Focused', 'Creative', 'Hermafrodite']
+
+Selected genes: 
+    (['Generous', 'Brave'], ['Focused', 'Creative', 'Hermafrodite'])
+------------------------------------------------------------
+3
+son of 2 and 3
+
+ADN: 
+   ['F', 'T', '_', 'T', 'S'] 
+ ['_', '_', 'F', '_', 'F']
+
+Genome: 
+   ['T', '_', 'F', 'T', 'S', 'T', '_', 'F', '_', '_', 'T', 'F', 'S', 'F', 'F', '_', '|', 'F', 'T', 'F', 'T', 'S']
+
+Potential genes: 
+    ['Generous', 'Brave', 'Greedy', 'Cowardly', 'Focused', 'Creative', 'Masked', 'Hermafrodite', 'Old', 'Infertil', 'Gay']
+
+Selected genes: 
+    (['Brave', 'Generous'], [])
+------------------------------------------------------------
+4
+son of 3 and 4
+
+ADN: 
+   ['S', 'F', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'F', 'F', '_', 'F']
+
+Genome: 
+   ['F', '_', '_', '_', '_', '_', '_', '_', '_', 'F', 'F', '_', 'F', '_', 'F', '_', '|', 'S', 'F', 'M', 'F', 'F', '_', 'F']
+
+Potential genes: 
+    ['Generous', 'Brave', 'Honest', 'Greedy', 'Cowardly', 'Manipulative', 'Focused', 'Unfocused', 'Disasiotive', 'Anger-Issues', 'Creative', 'Depresive', 'Masked', 'Depending', 'Hero-complex', 'Edipo-complex', 'Healty', 'Sick', 'Albino', 'Malformation', 'Heavy-malformation', 'Hermafrodite', 'Younght', 'Old', 'Infertil', 'Fragile', 'Chad', 'Twink', 'Sex-deprived', 'Pedofile', 'Sex-apeal', 'Incel', 'Femcel', 'Sweat home alabama', 'Zoofile', 'Futa', 'Gay', 'Shy', 'Charming', 'Lustful', 'Inocent', 'Sadistic', 'Masochistic', 'Violent', 'Pacifist']
+
+Selected genes: 
+    (['Brave', 'Generous'], ['Infertil', 'Albino', 'Sick'])
+------------------------------------------------------------
+5
+son of 4 wiht 4
+
+ADN: 
+   ['S', 'F', 'M', '_', '_', '_'] 
+ ['_', '_', 'T', 'F', '_', 'F']
+
+Genome: 
+   ['T', 'S', 'T', 'F', 'F', 'F', 'F', 'F', 'F', 'S', 'F', 'F', 'T', '_', 'F', 'F', '|', 'S', 'F', 'M', 'F', '_', 'F']
+
+Potential genes: 
+    ['Brave', 'Greedy', 'Hero-complex', 'Inocent']
+
+Selected genes: 
+    (['Greedy', 'Brave'], ['Hero-complex', 'Inocent'])

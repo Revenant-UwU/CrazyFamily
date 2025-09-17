@@ -1,0 +1,236 @@
+/* basic css */
+:root {
+    --header-height: 150px;
+}
+html {
+    font-family: 'Times New Roman', Times, serif;
+}
+body {
+    margin: 100px;
+    color: white;
+    background-color: black;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
+    opacity: .6;
+}
+
+.header {
+    position: relative;
+    height: var(--header-height);
+}
+.title {
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 50px;
+}
+.tubrotitle {
+    color: white;
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid white;
+}
+.nav a {
+    text-decoration: underline;
+    color: white;
+    transition: .5s;
+    position: relative;
+}
+.nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: .5s;
+}
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+p {
+    padding: 20px;
+    margin: 0;
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+.center.vertical {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Page home */
+.content {
+    min-height: calc(100vh - var(--header-height));
+}
+.subtitle {
+    margin: 0;
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.bigtitlecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bigtitlecontainer h1 {
+    font-size: 60px;
+    margin: 0;
+}
+.bigtitlecontainer h2 {
+    font-size: 30px;
+}
+
+/* Page about */
+.usercontainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.user {
+    position: relative;
+
+    border: 1px solid white;
+    padding: 10px;
+    border-radius: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    height: 250px;
+}
+
+.user p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.user a {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: rgb(100, 255, 255);
+    text-decoration: underline;
+}
+
+.currentuser {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.usertitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 30px;
+}
+
+.usertitle img {
+    border-radius: 50%;
+    width: 250px;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+p {
+    margin: 0 5%;
+}
+
+table td, table th {
+    padding: 10px;
+    border: 1px solid white;
+}
+
+a {
+    color: white;
+}
+
+table {
+    margin: 0 5%;
+    border-collapse: collapse;
+    width: 90%;
+    table-layout: fixed;
+    background-color: rgba(0, 0, 0, .2);
+}
+table td {
+    font-weight: 500;
+}
+
+.autocompleteinput {
+    width: 100%;
+    position: relative;
+}
+.autocompleteinput input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+.autocompleteinput input::placeholder {
+    color: white;
+}
+.autocompleteitems {
+    transition: .2s;
+    transform-origin: top;
+    transform: scaleY(0);
+    position: absolute;
+    width: 100%;
+    border: 1px solid black;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+}
+.autocompleteitems p {
+    margin: 0;
+    padding: 10px 30px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, .8);
+}
+.autocompleteitems p:hover {
+    background-color: rgba(0, 0, 0, 1);
+}

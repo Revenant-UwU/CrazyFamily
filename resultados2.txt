@@ -1,0 +1,80 @@
+------------------------------------------------------------
+1
+son of 0 and 1
+
+ADN: 
+   ['F', 'F', 'F', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'T', '_', 'T', 'S']
+
+Genome: 
+   ['F', 'F', 'F', 'T', '_', 'T', 'S']
+
+Potential genes: 
+    ['Generous', 'Brave', 'Creative']
+
+Selected genes: 
+    (['Generous', 'Brave'], ['Creative'])
+------------------------------------------------------------
+2
+son of 1 wiht itself
+
+ADN: 
+   ['F', 'F', 'F', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'T', 'T', '_', 'T', 'S']
+
+Genome: 
+   ['F', 'T', 'F', 'F', 'S', 'S', 'T', 'S', 'S', 'F', 'F', 'F', 'T', 'T', 'S', 'F', 'F', 'F', 'F', 'T', 'T', '_', 'T', 'S']
+
+Potential genes: 
+    ['Generous', 'Brave', 'Honest', 'Creative', 'Depresive', 'Chad']
+
+Selected genes: 
+    (['Brave', 'Generous'], ['Creative', 'Depresive', 'Chad'])
+------------------------------------------------------------
+3
+son of 2 and 3
+
+ADN: 
+   ['_', 'F', 'F', 'F', '_', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'T', '_', 'T', 'S']
+
+Genome: 
+   ['S', 'F', '_', 'S', 'F', 'T', 'F', 'F', 'S', '_', 'F', 'F', 'S', 'F', '_', 'F', '_', 'F', 'F', 'F', 'T', '_', 'T', 'S']
+
+Potential genes: 
+    ['Generous', 'Brave', 'Greedy', 'Creative', 'Twink']
+
+Selected genes: 
+    (['Greedy', 'Brave'], ['Creative', 'Twink'])
+------------------------------------------------------------
+4
+son of 3 and 4
+
+ADN: 
+   ['T', '_', 'T', 'S', '_', '_', '_'] 
+ ['_', '_', '_', 'F', 'T', 'T', 'M']
+
+Genome: 
+   ['_', '_', 'F', '_', 'T', '_', '_', 'S', 'T', 'F', '_', '_', 'F', '_', 'T', 'S', 'T', '_', 'T', 'S', 'T', 'T', 'M']
+
+Potential genes: 
+    ['Generous', 'Brave', 'Honest', 'Greedy', 'Focused', 'Unfocused', 'Creative', 'Depresive', 'Masked', 'Chad', 'Gay', 'Confident']
+
+Selected genes: 
+    (['Greedy', 'Honest'], ['Chad', 'Confident'])
+------------------------------------------------------------
+5
+son of 4 wiht 4
+
+ADN: 
+   ['M', 'F', 'F', 'F', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'T', 'T', 'M']
+
+Genome: 
+   ['T', 'F', 'M', 'F', 'F', 'F', 'T', 'F', 'F', '_', 'F', 'M', 'F', 'M', 'F', 'F', 'M', 'F', 'F', 'F', 'T', 'T', 'M']
+
+Potential genes: 
+    ['Brave', 'Honest', 'Greedy', 'Depresive', 'Masked']
+
+Selected genes: 
+    (['Greedy', 'Brave'], ['Depresive', 'Masked'])

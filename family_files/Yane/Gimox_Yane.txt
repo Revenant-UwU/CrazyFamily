@@ -1,0 +1,10 @@
+Gimox
+108
+M
+{'Principal': ['Manipulative', 'Cowardly'], 'Secundaria': None}
+8
+Patriarca
+None
+None
+['M', 'S', 'M', '_', '_', '_', '_'] 
+ ['_', '_', 'T', 'M', 'M', 'M', 'M']
