@@ -27,7 +27,6 @@ class ADN:
             self.base2 = []
             if lore !=None:
                 genes= deconstusct(lore)
-                print(genes)
                 if len(genes) > 1:
                     name1 = genes[0][0]
                     name2 = genes[0][1]
@@ -79,7 +78,7 @@ class ADN:
             s = []
             for i in range(16):
                 s.append(random.choice(lore))
-            self.genome = s +['|'] +self.genome
+            self.genome = s + self.genome
     def ADN_is_compatible(self, a, b):
         if a == '_' or b == '_':
             return True
@@ -185,12 +184,16 @@ def deconstusct(adn:ADN):
         return l
     perso_p = []
     p_s = []
+    Malformation = False
     genes = find_genes(adn)
     for i in genes:
         if i in perosnalidades_p:
             perso_p.append(i)
         if i in perosnalidades_s_value:
             p_s.append(i)
+    if len(perso_p) < 2:
+        perso_p.append('Cowardly')
+        Malformation = True
     perso_p = random.sample(perso_p, k=2)
     if len(p_s) > 3:
         m =[]
@@ -223,6 +226,13 @@ def deconstusct(adn:ADN):
                         lmao += 1
                     if  b not in final:
                         final.append(b)
+        if Malformation:
+            if len(final) == 3:
+                if 'Heavy-malformation' not in final:
+                    final.remove(random.choice(final))
+                    final.append('Heavy-malformation')
+            else:
+                final.append('Heavy-malformation')
         p_s = final
     return perso_p, p_s
 def create_lore(adn_m:ADN, adn_f: ADN)-> list:     

@@ -1,0 +1,10 @@
+Zetume
+129
+M
+{'Principal': ['Manipulative', 'Honest'], 'Secundaria': None}
+11
+Patriarca
+None
+None
+['M', 'S', 'M', '_', '_'] 
+ ['_', '_', 'T', 'T', 'M']

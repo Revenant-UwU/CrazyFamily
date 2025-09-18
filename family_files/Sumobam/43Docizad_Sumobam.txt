@@ -1,0 +1,10 @@
+Docizad
+43
+M
+{'Principal': ['Brave', 'Manipulative'], 'Secundaria': ['Masked', 'Depending', 'Masochistic']}
+-2
+None
+Pihuyo. S, 117, M
+Raqapo. S, 171, F
+['S', 'F', 'M', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'F', 'T', 'M', '_', 'M']

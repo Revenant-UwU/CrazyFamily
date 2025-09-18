@@ -1,0 +1,10 @@
+Hepako
+9
+F
+{'Principal': ['Manipulative', 'Cowardly'], 'Secundaria': ['Futa']}
+8
+None
+Pihuyo. S, 117, M
+Raqapo. S, 171, F
+['T', 'M', '_', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'S', 'M', 'S', 'M']

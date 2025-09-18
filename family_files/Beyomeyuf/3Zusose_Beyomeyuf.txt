@@ -1,0 +1,10 @@
+Zusose
+3
+F
+{'Principal': ['Brave', 'Manipulative'], 'Secundaria': ['Depending', 'Masked', 'Depresive']}
+13
+None
+Pigi. B, 22, M
+Tijorel. B, 63, F
+['T', 'M', '_', 'M', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'M', 'S', 'M']

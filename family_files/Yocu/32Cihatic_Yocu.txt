@@ -1,0 +1,10 @@
+Cihatic
+32
+M
+{'Principal': ['Generous', 'Honest'], 'Secundaria': ['Confident', 'Creative']}
+42
+None
+Rurog. Y, 85, M
+Baqihab. Y, 118, F
+['T', '_', 'T', 'S', '_'] 
+ ['_', 'T', 'M', '_', 'M']

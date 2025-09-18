@@ -1,0 +1,10 @@
+Let
+6
+M
+{'Principal': ['Brave', 'Honest'], 'Secundaria': ['Masked', 'Masochistic']}
+2
+None
+Docizad. S, 43, M
+Raqapo. S, 171, F
+['M', 'S', 'M', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'M', 'T', 'M', '_', 'M']

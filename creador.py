@@ -34,10 +34,13 @@ perosnalidades_s = {"Mental": ["Focused", "Unfocused", "Disasiotive", "Anger-Iss
                     "Sexual": ["Chad", "Twink", "Sex-deprived", "Pedofile", "Sex-apeal", "Incel", "Femcel", "Sweat home alabama", "Zoofile", "Futa", "Gay"],
                     "Talent": ["Confident", "Shy", "Repulsive" , "Charming" ,"Lustful","Inocent" , "Sadistic", "Masochistic", "Violent", "Pacifist"]} #Charming used as fetile 
 from adn_code import *
-original_1 = {0:0, 4:1 , 9:5, 12:7, 14:13, 16:20, 18:22, 25:20, 30:18, 40:7, 50:5, 80:1}
-original_2={0:0, 9:1, 11:10, 20:25, 40:20, 50:10, 100:1}
+original_1 = {0:0, 4:1 , 9:5, 12:7, 14:13, 16:20, 18:22, 25:20, 30:18, 40:7, 50:5, 80:1, 300:1}
+original_2={0:0, 9:1, 11:10, 20:25, 40:20, 50:10, 100:1, 300:1}
 fertilidad_por_edad_f = normalizador_dic(original_1)
 fertilidad_por_edad_m = normalizador_dic(original_2)
+for i in range(101, 200):
+    fertilidad_por_edad_f[i] = 20.0
+    fertilidad_por_edad_m[i] = 20.0
 
 NPC_vivos = [] #lista de objetos persona
 NPC_muertos= []
@@ -70,10 +73,10 @@ def random_name(length_n):
     s=''
     return s.join(name)
 class Persona:
-    def __init__(self, nombre:str, nombre_f:str, edad:str, genero:str, personalidad:Personalidad , oficio:str , madre, padre, moralidad = None):
+    def __init__(self, nombre:str, nombre_f:str, edad:int, genero:str, personalidad:Personalidad , oficio:str , madre, padre, moralidad = None):
         self.nombre = nombre
         self.nombre_familia = nombre_f
-        self.edad = edad
+        self.edad = int(edad)
         self.genero = genero
         self.oficio= oficio
         self.madre:Persona = madre
@@ -94,6 +97,7 @@ class Persona:
         self.moralidad = moralidad
         if self.moralidad == None:
             self.moralidad= self.calculo_morlidad()
+        NPC_vivos.append(self)
     def __str__(self):
         return f"{self.nombre}. {self.nombre_familia[0]}, {self.edad}, {self.genero}"
     def __repr__(self):
@@ -196,13 +200,17 @@ class Familia:
         else:
             i = 1
             a = 0
-        Patriarca = Persona(nombre, self.nombre_familia, random.randint(45,150), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": None}, "Patriarca", None, None)
-        Matriarca = Persona(nombrem, self.nombre_familia, random.randint(45,150), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": None}, "Patriarca", None, None)
+        Patriarca = Persona(nombre, self.nombre_familia, random.randint(45,120), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": None}, "Patriarca", None, None)
+        Matriarca = Persona(nombrem, self.nombre_familia, random.randint(45,120), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": None}, "Patriarca", None, None)
         self.miembros.append(Patriarca)
         self.miembros.append(Matriarca)
         Familias.append(self)
-        NPC_vivos.append(Patriarca)
-        NPC_vivos.append(Matriarca)
+        while len(self.miembros) <= 15:
+            born(SEXO(self.miembros))
+            i: Persona
+            for i in self.miembros:
+                i.edad += 1
+
     def __repr__(self):
         return f'{self.nombre_familia}, {self.funcionamiento}, {len(self.miembros)}'
 def selector_p_prin():
@@ -302,8 +310,9 @@ def SEXO(integrantes):
         for mujer in Mu:
             if not isinstance(mujer, Animal):
                 fertilidad = fertilidad_por_edad_f[int(mujer.edad)]
-                if "Charming" in mujer.personalidad["Secundaria"]:
-                    fertilidad += random.randrange(3,13)
+                if mujer.personalidad["Secundaria"] != None:
+                    if "Charming" in mujer.personalidad["Secundaria"]:
+                        fertilidad += random.randrange(3,13)
             else:
                 fertilidad= random.randrange(5,15)
             for npc in Hom:
@@ -331,21 +340,47 @@ def enuentra_familia(nommbre_f):
         if i.nombre_familia == nommbre_f:
             return i
 def born(pregnant:dict):
+    def sexo(dad):
+            name = random_name(random.randrange(3,8))
+            dad:Persona = dad
+            gender = random.choice(['M', 'F'])
+            if mom.nombre_familia != dad.nombre_familia:
+                mom_f = enuentra_familia(mom.nombre_familia)
+                dad_f = enuentra_familia(dad.nombre_familia)
+                if mom_f.funcionamiento != dad_f.funcionamiento:
+                    f = random.choice([mom_f, dad_f])
+                    if f == mom_f:
+                        not_f = dad_f
+                    else:
+                        not_f = mom_f
+                else:
+                    if mom_f.funcionamiento == 'P':
+                        f = dad_f
+                        not_f = mom_f
+                    elif mom_f.funcionamiento == 'M':
+                        f = mom_f
+                        not_f = dad_f
+                if f.funcionamiento == 'P':
+                    if gender == 'M':
+                        son_f = f
+                    else:
+                        son_f = not_f
+                else:
+                    if gender == 'F':
+                        son_f = f
+                    else:
+                        son_f = not_f
+            else:
+                son_f = enuentra_familia(mom.nombre_familia)
+            kid = Persona(name, son_f.nombre_familia, str(0), gender, None, None, mom, dad)
+            son_f.miembros.append(kid)
+           
     galls = pregnant.keys()
-    name = random_name(random.randrange(3,8))
     for i in galls:
         mom:Persona = i
-        for b in pregnant[i]:
-            dad:Persona = pregnant[i]
-    if mom.nombre_familia != dad.nombre_familia:
-        mom_f = enuentra_familia(mom.nombre_familia)
-        dad_f = enuentra_familia(dad.nombre_familia)
-        if mom_f.funcionamiento != dad_f.funcionamiento:
-            f = random.choice([mom_f, dad_f])
+        if isinstance(pregnant[i],Persona) !=  True:
+            for b in pregnant[i]:
+                sexo(b)
         else:
-            f = mom_f
-        gender = random.choice
-
-        
-    kid = Persona(name)
-
+            sexo(pregnant[i])
+    

@@ -1,0 +1,10 @@
+Zufane
+4
+F
+{'Principal': ['Manipulative', 'Cowardly'], 'Secundaria': ['Healty', 'Heavy-malformation', 'Pacifist']}
+40
+None
+Bejicol. B, 24, M
+Fujucuy. B, 161, F
+['T', 'T', 'M', '_', 'M', '_', '_', '_'] 
+ ['_', '_', '_', '_', '_', 'M', 'S', 'M']

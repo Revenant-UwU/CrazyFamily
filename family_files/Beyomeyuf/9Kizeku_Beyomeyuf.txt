@@ -1,0 +1,10 @@
+Kizeku
+9
+M
+{'Principal': ['Cowardly', 'Brave'], 'Secundaria': ['Unfocused', 'Hero-complex']}
+45
+None
+Pigi. B, 22, M
+Fujucuy. B, 161, F
+['T', 'M', 'S', 'M', '_', '_', '_'] 
+ ['_', '_', '_', 'T', 'M', '_', 'M']

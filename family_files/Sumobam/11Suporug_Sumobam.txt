@@ -1,0 +1,10 @@
+Suporug
+11
+M
+{'Principal': ['Greedy', 'Manipulative'], 'Secundaria': ['Masked', 'Albino', 'Malformation']}
+6
+None
+Kujiv. S, 25, M
+Raqapo. S, 171, F
+['M', 'F', '_', 'F', '_', '_'] 
+ ['_', '_', '_', 'S', 'F', 'M']

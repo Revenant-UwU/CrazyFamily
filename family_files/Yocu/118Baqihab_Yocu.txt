@@ -1,0 +1,10 @@
+Baqihab
+118
+F
+{'Principal': ['Brave', 'Generous'], 'Secundaria': None}
+22
+Patriarca
+None
+None
+['F', '_', 'F', '_', '_'] 
+ ['_', 'T', '_', 'T', 'S']

@@ -1,0 +1,10 @@
+Nubejaw
+26
+M
+{'Principal': ['Greedy', 'Manipulative'], 'Secundaria': ['Depending']}
+11
+None
+Rurog. Y, 85, M
+Baqihab. Y, 118, F
+['T', 'M', '_', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'F', 'F', '_', 'F']

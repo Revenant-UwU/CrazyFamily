@@ -1,0 +1,10 @@
+Wifewis
+2
+F
+{'Principal': ['Manipulative', 'Generous'], 'Secundaria': ['Repulsive', 'Confident']}
+8
+None
+Zuqet. Y, 18, M
+Baqihab. Y, 118, F
+['T', '_', 'T', 'S', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'T', 'T', 'M', '_', 'M']

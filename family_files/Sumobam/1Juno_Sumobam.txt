@@ -1,0 +1,10 @@
+Juno
+1
+M
+{'Principal': ['Greedy', 'Brave'], 'Secundaria': ['Masked', 'Inocent']}
+19
+None
+Kujiv. S, 25, M
+Fahuf. S, 30, F
+['M', 'S', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'F', 'S', 'F', 'M']

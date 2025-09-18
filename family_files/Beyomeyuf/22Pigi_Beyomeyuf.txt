@@ -1,0 +1,10 @@
+Pigi
+22
+M
+{'Principal': ['Honest', 'Manipulative'], 'Secundaria': ['Healty', 'Sick', 'Pacifist']}
+30
+None
+Zetume. B, 129, M
+Fujucuy. B, 161, F
+['T', 'T', 'M', '_', '_', '_'] 
+ ['_', 'M', 'T', 'M', '_', 'M']

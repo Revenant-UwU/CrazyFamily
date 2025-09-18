@@ -1,0 +1,10 @@
+Bav
+8
+M
+{'Principal': ['Cowardly', 'Manipulative'], 'Secundaria': ['Younght', 'Anger-Issues', 'Fragile']}
+27
+None
+Nubejaw. Y, 26, M
+Baqihab. Y, 118, F
+['S', 'F', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'F', 'F', '_', 'F']

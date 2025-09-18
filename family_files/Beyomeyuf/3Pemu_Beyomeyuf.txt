@@ -1,0 +1,10 @@
+Pemu
+3
+M
+{'Principal': ['Manipulative', 'Generous'], 'Secundaria': ['Fragile']}
+12
+None
+Pigi. B, 22, M
+Fujucuy. B, 161, F
+['M', 'S', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'M', 'T', 'T', 'M']

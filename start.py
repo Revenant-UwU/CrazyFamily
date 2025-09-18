@@ -33,7 +33,7 @@ def fam_saver(mode = None):
         os.chdir(ruta_c)
         for person in families.miembros:
             person: Persona
-            nombre = f'{person.nombre}_{families.nombre_familia}' 
+            nombre = f'{person.edad}{person.nombre}_{families.nombre_familia}' 
             with open(f'{nombre}.txt', 'w', encoding='utf-8') as f:
                 for i in [person.nombre, str(person.edad), person.genero,str(person.personalidad) ,str(person.moralidad), person.oficio,
                           str(person.padre), str(person.madre), str(person.adn)]:

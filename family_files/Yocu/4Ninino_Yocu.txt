@@ -1,0 +1,10 @@
+Ninino
+4
+M
+{'Principal': ['Cowardly', 'Brave'], 'Secundaria': ['Masked']}
+11
+None
+Nubejaw. Y, 26, M
+Baqihab. Y, 118, F
+['F', 'F', '_', 'F', '_', '_'] 
+ ['_', '_', '_', 'S', 'F', 'M']

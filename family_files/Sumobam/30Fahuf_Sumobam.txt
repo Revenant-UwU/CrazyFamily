@@ -1,0 +1,10 @@
+Fahuf
+30
+F
+{'Principal': ['Generous', 'Honest'], 'Secundaria': ['Creative', 'Depresive', 'Hermafrodite']}
+34
+None
+Docizad. S, 43, M
+Raqapo. S, 171, F
+['F', '_', 'F', '_', '_'] 
+ ['_', 'F', 'S', 'F', 'M']

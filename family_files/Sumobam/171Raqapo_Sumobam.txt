@@ -1,0 +1,10 @@
+Raqapo
+171
+F
+{'Principal': ['Manipulative', 'Greedy'], 'Secundaria': None}
+10
+Patriarca
+None
+None
+['M', 'S', 'M', '_', '_', '_'] 
+ ['_', '_', '_', 'S', 'F', 'M']

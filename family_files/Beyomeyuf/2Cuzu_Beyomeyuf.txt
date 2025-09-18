@@ -1,0 +1,10 @@
+Cuzu
+2
+F
+{'Principal': ['Manipulative', 'Cowardly'], 'Secundaria': ['Pacifist', 'Unfocused']}
+26
+None
+Zetume. B, 129, M
+Fujucuy. B, 161, F
+['T', 'T', 'M', '_', '_', '_'] 
+ ['_', '_', 'T', 'M', '_', 'M']

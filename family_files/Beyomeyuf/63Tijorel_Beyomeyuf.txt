@@ -1,0 +1,10 @@
+Tijorel
+63
+F
+{'Principal': ['Manipulative', 'Cowardly'], 'Secundaria': ['Futa']}
+8
+None
+Zetume. B, 129, M
+Fujucuy. B, 161, F
+['T', 'M', '_', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'M', 'M', 'S', 'M']

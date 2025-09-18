@@ -1,0 +1,10 @@
+Rurog
+85
+M
+{'Principal': ['Generous', 'Brave'], 'Secundaria': None}
+22
+Patriarca
+None
+None
+['T', '_', 'T', 'S'] 
+ ['_', 'F', '_', 'F']

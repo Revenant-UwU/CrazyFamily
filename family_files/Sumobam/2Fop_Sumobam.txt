@@ -1,0 +1,10 @@
+Fop
+2
+F
+{'Principal': ['Honest', 'Cowardly'], 'Secundaria': ['Anger-Issues', 'Focused']}
+13
+None
+Kujiv. S, 25, M
+Raqapo. S, 171, F
+['M', 'S', 'F', 'M', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'F', '_', 'F']

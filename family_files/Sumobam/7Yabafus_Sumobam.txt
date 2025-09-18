@@ -1,0 +1,10 @@
+Yabafus
+7
+F
+{'Principal': ['Brave', 'Manipulative'], 'Secundaria': ['Masked']}
+9
+None
+Kujiv. S, 25, M
+Raqapo. S, 171, F
+['M', 'S', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'M', 'S', 'F', 'M']

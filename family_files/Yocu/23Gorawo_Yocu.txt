@@ -1,0 +1,10 @@
+Gorawo
+23
+F
+{'Principal': ['Greedy', 'Generous'], 'Secundaria': ['Focused', 'Gay']}
+11
+None
+Rurog. Y, 85, M
+Baqihab. Y, 118, F
+['T', 'T', '_', 'T', 'S', '_'] 
+ ['_', '_', 'T', 'M', '_', 'M']

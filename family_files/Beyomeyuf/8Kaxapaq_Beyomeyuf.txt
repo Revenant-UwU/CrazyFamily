@@ -1,0 +1,10 @@
+Kaxapaq
+8
+F
+{'Principal': ['Honest', 'Cowardly'], 'Secundaria': []}
+13
+None
+Pigi. B, 22, M
+Fujucuy. B, 161, F
+['M', 'S', 'M', '_', '_', '_', '_'] 
+ ['_', '_', 'T', 'T', 'M', '_', 'M']

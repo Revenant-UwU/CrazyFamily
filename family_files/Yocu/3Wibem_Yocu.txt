@@ -1,0 +1,10 @@
+Wibem
+3
+M
+{'Principal': ['Honest', 'Generous'], 'Secundaria': ['Confident']}
+22
+None
+Zuqet. Y, 18, M
+Baqihab. Y, 118, F
+['T', 'T', '_', 'T', 'S', '_'] 
+ ['_', '_', 'T', 'M', '_', 'M']
