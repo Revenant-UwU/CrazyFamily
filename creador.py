@@ -82,6 +82,7 @@ class Persona:
         self.madre:Persona = madre
         self.padre:Persona = padre
         self.adn: ADN= None
+        self.health_max = 100
         if personalidad != None:
             self.personalidad:Personalidad = personalidad #Primaria list, secundaria list too 
             if madre == None or padre == None:
@@ -97,11 +98,36 @@ class Persona:
         self.moralidad = moralidad
         if self.moralidad == None:
             self.moralidad= self.calculo_morlidad()
+        for b in self.personalidad["Secundaria"]:
+            if b == 'Healty' :
+                self.health_max += 15
+            if b == "Younght":
+                self.health_max += 10
+            if b == 'Sick':
+                self.health_max -=10
+            if b == 'Malformation':
+                self.health_max -= 15
+            if b == 'Heavy-malformation':
+                self.health_max -=30
+            if b == 'Old':
+                self.health_max -=10
+            if b == 'Fragile':
+                self.health_max -=20
+        self.healt = self.health_max
         NPC_vivos.append(self)
     def __str__(self):
         return f"{self.nombre}. {self.nombre_familia[0]}, {self.edad}, {self.genero}"
     def __repr__(self):
         return f"{self.nombre}. {self.nombre_familia[0]}"
+    def muerte(self):
+        if self.healt <=0:
+            NPC_vivos.remove(self)
+            NPC_muertos.append(self)
+        else:
+            if self.healt + 2 > self.health_max:
+                self.healt = self.health_max
+            else:
+                self.healt += 2
     def calculo_morlidad(self):
         m = 0
         p = []
@@ -138,7 +164,7 @@ class Animal:
         '''
         n = self.nombre.lower()
         if 'dog' in n:
-            genes = None
+            genes = ADN('dog')
         elif "cat" in n:
             genes = None
         elif "horse" in n:
@@ -148,7 +174,7 @@ class Animal:
         elif 'pig' in n:
             genes = None
         else:
-            raise NameError('the name given to the animal doesnt indicate the anime it is suposed to be', n)
+            raise NameError('the name given to the animal doesnt indicate the animal it is suposed to be', n)
         self.genes = genes
 class Pareja(Persona):
     def __init__(self, persona:Persona, pareja = None):
@@ -200,17 +226,16 @@ class Familia:
         else:
             i = 1
             a = 0
-        Patriarca = Persona(nombre, self.nombre_familia, random.randint(45,120), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": None}, "Patriarca", None, None)
-        Matriarca = Persona(nombrem, self.nombre_familia, random.randint(45,120), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": None}, "Patriarca", None, None)
+        Patriarca = Persona(nombre, self.nombre_familia, random.randint(45,120), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": []}, "Patriarca", None, None)
+        Matriarca = Persona(nombrem, self.nombre_familia, random.randint(45,120), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": []}, "Patriarca", None, None)
         self.miembros.append(Patriarca)
         self.miembros.append(Matriarca)
         Familias.append(self)
-        while len(self.miembros) <= 15:
+        while len(self.miembros) <= 4:
             born(SEXO(self.miembros))
             i: Persona
             for i in self.miembros:
                 i.edad += 1
-
     def __repr__(self):
         return f'{self.nombre_familia}, {self.funcionamiento}, {len(self.miembros)}'
 def selector_p_prin():

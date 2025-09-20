@@ -9,7 +9,13 @@ genotipos = {
     "Manipulative":['M', 'S', 'M']
 }
 perso = list(genotipos.keys())
-
+genotipos_a = {
+    'dog': ['D', '_', 'D', '_'],
+    'cat': ['C', '_', '_','R'],
+    'horse': ['_','H', 'H', 'H'],
+    'dragon': ['_', 'R', 'C', 'R'],
+    'pig': ['P']
+}
 class ADN:  
     def __init__(self, name1 = None, name2= None, max_shift=None, lore = None):
         """
@@ -36,7 +42,15 @@ class ADN:
                 self.base1 = genotipos[name1][:]
                 self.base2 = genotipos[name2][:]
                 self.construct(name1,name2, None, lore)
-
+        elif name1 or name2 in ['dog', 'cat', 'horse', 'dragon', 'pig']:
+            if name1 != None:
+                name2= name1
+            else:
+                name1 = name2
+            name2  =random.choice([perso])
+            self.base1 = genotipos_a[name1][:]
+            self.base2 = genotipos[name2][:]
+            self.construct(name1, name2, 4)
         else:
             self.base1 = genotipos[name1][:]
             self.base2 = genotipos[name2][:]
@@ -82,7 +96,7 @@ class ADN:
     def ADN_is_compatible(self, a, b):
         if a == '_' or b == '_':
             return True
-        reglas = {"M": ["T"], "F": ["S"], "S": ["F"], "T": ["M"]}
+        reglas = {"M": ["T"], "F": ["S"], "S": ["F"], "T": ["M"], 'D': ['D'], 'C': ['C'], 'H': ['H'], 'R': ['R'], 'P': ['P']}
         return b in reglas.get(a, [])
     def pad_equal(self, s1, s2):
         a = s1[:]
