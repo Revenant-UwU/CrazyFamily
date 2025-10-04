@@ -1,7 +1,7 @@
-Rurog
-85
+Fukaki
+51
 M
-{'Principal': ['Generous', 'Brave'], 'Secundaria': None}
+{'Principal': ['Generous', 'Brave'], 'Secundaria': []}
 22
 Patriarca
 None

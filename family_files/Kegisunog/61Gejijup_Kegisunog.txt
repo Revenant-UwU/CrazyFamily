@@ -1,0 +1,10 @@
+Gejijup
+61
+F
+{'Principal': ['Greedy', 'Honest'], 'Secundaria': []}
+15
+Patriarca
+None
+None
+['S', 'F', 'M', '_', '_'] 
+ ['_', '_', 'T', 'T', 'M']

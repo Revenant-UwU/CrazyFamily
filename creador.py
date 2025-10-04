@@ -166,13 +166,13 @@ class Animal:
         if 'dog' in n:
             genes = ADN('dog')
         elif "cat" in n:
-            genes = None
+            genes = ADN('cat')
         elif "horse" in n:
-            genes = None
+            genes = ADN('horse')
         elif 'dragon' in n:
-            genes = None
+            genes = ADN('dragon')
         elif 'pig' in n:
-            genes = None
+            genes = ADN('pig')
         else:
             raise NameError('the name given to the animal doesnt indicate the animal it is suposed to be', n)
         self.genes = genes
@@ -269,7 +269,10 @@ def SEXO(integrantes):
         embarazo = False
         fertilidad_f = 100 - fertility
         if isinstance(male, Persona):
-            fertilidad_m = fertilidad_por_edad_m[int(male.edad)]
+            if male.oficio != 'Patriarca':
+                fertilidad_m = fertilidad_por_edad_m[int(male.edad)]
+            else:
+                fertilidad_m = 100
             while Intentos[male] > 0 and embarazo != True:
                 chance = fertilidad_f * (fertilidad_m/100)
                 chance2 = 100 - chance
@@ -334,7 +337,10 @@ def SEXO(integrantes):
     if mujeres >= 1:
         for mujer in Mu:
             if not isinstance(mujer, Animal):
-                fertilidad = fertilidad_por_edad_f[int(mujer.edad)]
+                if mujer.oficio != 'Matriarca':
+                    fertilidad = fertilidad_por_edad_f[int(mujer.edad)]
+                else:
+                    fertilidad = 100
                 if mujer.personalidad["Secundaria"] != None:
                     if "Charming" in mujer.personalidad["Secundaria"]:
                         fertilidad += random.randrange(3,13)

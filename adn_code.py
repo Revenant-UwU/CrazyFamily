@@ -1,12 +1,12 @@
 import random
 from creador import perosnalidades_p, perosnalidades_s
 genotipos = {
-    "Generous":    ['T', '_','T', 'S'],
-    "Brave":       ['F', '_', 'F'],
-    "Honest":      ["T",'T', "M"],
-    "Greedy":      ["S", 'F','M'],
-    "Cowardly":    ['T', 'M', '_', 'M'],
-    "Manipulative":['M', 'S', 'M']
+    "Generous":    ['T', '_','T', 'S', '_'],
+    "Brave":       ['F', '_', 'F', '_'],
+    "Honest":      ["_",'T', "M", '_'],
+    "Greedy":      ["S", 'F','_','M'],
+    "Cowardly":    ['T', '_','M', '_', 'M'],
+    "Manipulative":['M', 'S', '_', '_','M']
 }
 perso = list(genotipos.keys())
 genotipos_a = {
@@ -22,13 +22,29 @@ class ADN:
         First 16 lines of geneome should come from parents
         tre foro
         """
+        self.genome = []
         if lore != None:
-            if len(lore) > 16:
+            if len(lore) > 20:
                 error = f"lore: {lore} can't be over 16 on leng"
                 raise ValueError(error) 
         self.name1 = name1
         self.name2 = name2
-        if name1 == None or name2 == None:
+        if name1 in ['dog', 'cat', 'horse', 'dragon', 'pig'] or name2 in ['dog', 'cat', 'horse', 'dragon', 'pig']:
+            if name1 == None:
+                name1 = str(name2)
+                name2 = random.choice(perso)
+            elif name1 not in ['dog', 'cat', 'horse', 'dragon', 'pig']:
+                d = str(name2)
+                name2 = str(name1)
+                name1 = d
+            else:
+                name2 = random.choice(perso)
+            if name1 not in ['dog', 'cat', 'horse', 'dragon', 'pig']:
+                raise KeyError(name1, name2)
+            self.base1 = genotipos_a[name1][:]
+            self.base2 = genotipos[name2][:]
+            self.construct(name1, name2, 4)
+        elif name1 == None or name2 == None:
             self.base1 = []
             self.base2 = []
             if lore !=None:
@@ -42,15 +58,6 @@ class ADN:
                 self.base1 = genotipos[name1][:]
                 self.base2 = genotipos[name2][:]
                 self.construct(name1,name2, None, lore)
-        elif name1 or name2 in ['dog', 'cat', 'horse', 'dragon', 'pig']:
-            if name1 != None:
-                name2= name1
-            else:
-                name1 = name2
-            name2  =random.choice([perso])
-            self.base1 = genotipos_a[name1][:]
-            self.base2 = genotipos[name2][:]
-            self.construct(name1, name2, 4)
         else:
             self.base1 = genotipos[name1][:]
             self.base2 = genotipos[name2][:]
@@ -208,6 +215,7 @@ def deconstusct(adn:ADN):
     if len(perso_p) < 2:
         perso_p.append('Cowardly')
         Malformation = True
+    print(perso_p)
     perso_p = random.sample(perso_p, k=2)
     if len(p_s) > 3:
         m =[]
@@ -257,9 +265,21 @@ def create_lore(adn_m:ADN, adn_f: ADN)-> list:
         upper = adn_f
     else:
         upper= adn_m
-    void_adn.base1 = upper.base1
-    void_adn.base2 = lower.base2
-    void_adn.construct()
+    upper = upper.base1
+    lower = lower.base2
+    for i in [upper, lower]:
+        for b in range(len(upper)):
+            if random.choice(range(20)) >19:
+                zzzzzz= [list(genotipos_a.keys()), list(genotipos.keys())]
+                cccc = random.choice(zzzzzz)
+                if cccc == zzzzzz[0]:
+                    toinsert = genotipos_a[random.choice(cccc)]
+                else:
+                    toinsert = genotipos[random.choice(cccc)]
+                i[b:b] = toinsert
+    void_adn.base1 = upper
+    void_adn.base2 = lower
+    print(upper, lower)
     lore:list =void_adn.genome
     while len(lore) > 20:
         lore.remove(random.choice(lore))
@@ -288,7 +308,7 @@ sexual = perosnalidades_s["Sexual"]
 talent = perosnalidades_s["Talent"]
 perosnalidades_s_value = [] + mental + fisca + sexual + talent
 per = [] + mental + fisca + sexual + talent 
-
+random.shuffle(per)
 b=0
 adn_dic = {}
 for i in fun:

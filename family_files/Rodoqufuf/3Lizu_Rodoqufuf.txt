@@ -1,0 +1,10 @@
+Lizu
+3
+F
+{'Principal': ['Honest', 'Manipulative'], 'Secundaria': ['Albino', 'Sick', 'Violent']}
+-2
+None
+Fukaki. R, 51, M
+Huzuk. R, 73, F
+['F', 'F', '_', 'F', '_', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'T', 'M', '_', 'M']

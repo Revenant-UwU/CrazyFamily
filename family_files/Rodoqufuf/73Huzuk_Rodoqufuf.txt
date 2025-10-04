@@ -1,7 +1,7 @@
-Baqihab
-118
+Huzuk
+73
 F
-{'Principal': ['Brave', 'Generous'], 'Secundaria': None}
+{'Principal': ['Brave', 'Generous'], 'Secundaria': []}
 22
 Patriarca
 None

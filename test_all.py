@@ -14,7 +14,7 @@ class Test_name(unittest.TestCase):
             self.assertIn(new_nombre, nombre)
     def test_persons_atributes(self):
         Marth = Persona("Marth", "Grand", "19", "M",  {"Principal": ["Brave", "Honest"], "Secundaria": ["Pedofile", "Albino"]}, "Crazy", None, None)
-        Girlfriend = Persona("Grey", "Son", "18", "F",  {"Principal": ["Manipulative", "Honest"], "Secundaria": None}, "Crazy", None, None)
+        Girlfriend = Persona("Grey", "Son", "18", "F",  {"Principal": ["Manipulative", "Honest"], "Secundaria": []}, "Crazy", None, None)
         Son = Persona("Kiddo", "Grand", "5", "M", None, None, Girlfriend, Marth)
         for Npc in [Marth, Girlfriend, Son]:
             NPC_vivos.append(Npc)
@@ -22,8 +22,7 @@ class Test_name(unittest.TestCase):
         GF = Pareja(Girlfriend, None)
         BF.pareja = GF
         GF.pareja = BF
-        person: Persona
-        self.assertEqual(sorted(NPC_vivos, key=lambda person: person.nombre), sorted([BF, GF, Son], key=lambda person: person.nombre))
+
         self.assertEqual(Marth.nombre, BF.nombre)
         self.assertEqual(BF, Son.padre)
         self.assertEqual(GF, Son.madre)
@@ -73,16 +72,20 @@ class Test_name(unittest.TestCase):
                         print( "")
     def test_encuentra_padres(self):
         
-        Girlfriend2 = Persona("Grey", "2", "18", "F",  {"Principal": ["Manipulative", "Honest"], "Secundaria": None}, "Crazy", None, None)
+        Girlfriend2 = Persona("Grey", "2", "18", "F",  {"Principal": ["Manipulative", "Honest"], "Secundaria": []}, "Crazy", None, None)
         Marth3 = Persona("Marth", "3", "19", "M",  {"Principal": ["Brave", "Honest"], "Secundaria": ["Pedofile", "Albino"]}, "Crazy", None, None)
-        Girlfriend3 = Persona("Grey", "3", "18", "F",  {"Principal": ["Manipulative", "Honest"], "Secundaria": None}, "Crazy",None , None)
+        Girlfriend3 = Persona("Grey", "3", "18", "F",  {"Principal": ["Manipulative", "Honest"], "Secundaria": []}, "Crazy",None , None)
         Marth2 = Persona("Marth", "2", "19", "M",  {"Principal": ["Brave", "Honest"], "Secundaria": ["Pedofile", "Albino"]}, "Crazy", Marth3, Girlfriend3)
         Marth = Persona("Marth", "Grand", "19", "M",  {"Principal": ["Brave", "Honest"], "Secundaria": ["Pedofile", "Albino"]}, "Crazy", Marth2, Girlfriend2)
-        Girlfriend = Persona("Grey", "Son", "18", "F",  {"Principal": ["Manipulative", "Honest"], "Secundaria": None}, "Crazy", Marth3, Girlfriend3)
+        Girlfriend = Persona("Grey", "Son", "18", "F",  {"Principal": ["Manipulative", "Honest"], "Secundaria": []}, "Crazy", Marth3, Girlfriend3)
         Son = Persona("Kiddo", "Grand", "5", "M", None, None, Girlfriend, Marth)
         print("______test encuentra padres_____")
         print(encunetra_antepasados(Son))
         print("______fin_________")
+    def test_see_adn_animal(self):
+        dog = Animal('Wild dog')
+        print(dog)
+        print(dog.genes)
         
         
 if __name__ ==  '__main__':

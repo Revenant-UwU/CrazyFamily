@@ -1,0 +1,10 @@
+Melefev
+86
+M
+{'Principal': ['Honest', 'Greedy'], 'Secundaria': []}
+15
+Patriarca
+None
+None
+['T', 'T', 'M', '_', '_', '_'] 
+ ['_', '_', '_', 'S', 'F', 'M']

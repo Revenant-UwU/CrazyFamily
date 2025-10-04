@@ -1,0 +1,10 @@
+Yoj
+3
+F
+{'Principal': ['Manipulative', 'Brave'], 'Secundaria': ['Sex-apeal', 'Confident', 'Sadistic']}
+19
+None
+Melefev. K, 86, M
+Gejijup. K, 61, F
+['F', 'S', 'F', 'M', '_', '_', '_'] 
+ ['_', '_', '_', 'T', 'M', '_', 'M']
