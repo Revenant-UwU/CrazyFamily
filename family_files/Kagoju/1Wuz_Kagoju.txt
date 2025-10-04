@@ -1,0 +1,11 @@
+Wuz
+1
+F
+{'Principal': ['Brave', 'Cowardly'], 'Secundaria': ['Hermafrodite']}
+4
+None
+Nifobo. K, 112, M
+Kudame. K, 98, F
+['F', 'T', '_', 'M', '_', 'M'] 
+ ['_', '_', 'F', '_', 'F', '_']
+['F', '_', 'F', 'F', 'F', 'F', 'F', '_', 'F', 'F', 'F', 'F', 'F', '_', 'F', 'F', 'F', 'T', 'F', 'M', 'F', 'M']
