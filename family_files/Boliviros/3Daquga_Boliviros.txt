@@ -1,0 +1,10 @@
+Daquga
+3
+F
+{'Principal': ['Generous', 'Honest'], 'Secundaria': ['Chad', 'Sweat home alabama', 'Pacifist']}
+28
+None
+Xiwes. B, 76, M
+Mevoke. B, 97, F
+['M', 'S', 'M', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'M', 'T', 'M', '_', 'M']

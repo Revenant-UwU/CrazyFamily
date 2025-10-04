@@ -1,0 +1,10 @@
+Ned
+1
+M
+{'Principal': ['Cowardly', 'Manipulative'], 'Secundaria': ['Sick', 'Masked', 'Creative']}
+7
+None
+Xiwes. B, 76, M
+Mevoke. B, 97, F
+['F', '_', 'F', '_', '_'] 
+ ['_', 'F', 'S', 'F', 'M']

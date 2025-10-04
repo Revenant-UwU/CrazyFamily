@@ -1,0 +1,10 @@
+Qibo
+2
+M
+{'Principal': ['Cowardly', 'Brave'], 'Secundaria': ['Depresive']}
+21
+None
+Xiwes. B, 76, M
+Mevoke. B, 97, F
+['M', 'S', 'M', '_', '_', '_'] 
+ ['_', '_', 'T', 'M', '_', 'M']

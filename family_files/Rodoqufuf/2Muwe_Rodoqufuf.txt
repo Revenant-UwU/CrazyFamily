@@ -1,0 +1,10 @@
+Muwe
+2
+F
+{'Principal': ['Brave', 'Cowardly'], 'Secundaria': ['Sick']}
+14
+None
+Fukaki. R, 51, M
+Huzuk. R, 73, F
+['F', '_', 'F', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'F', 'T', 'M', '_', 'M']

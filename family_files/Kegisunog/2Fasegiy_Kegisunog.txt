@@ -1,0 +1,10 @@
+Fasegiy
+2
+F
+{'Principal': ['Manipulative', 'Brave'], 'Secundaria': ['Sick', 'Sex-apeal', 'Confident']}
+28
+None
+Melefev. K, 86, M
+Gejijup. K, 61, F
+['S', 'S', 'F', 'M', '_', '_', '_'] 
+ ['_', '_', '_', 'T', 'M', '_', 'M']

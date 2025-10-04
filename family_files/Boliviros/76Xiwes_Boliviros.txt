@@ -1,0 +1,10 @@
+Xiwes
+76
+M
+{'Principal': ['Brave', 'Cowardly'], 'Secundaria': []}
+17
+Patriarca
+None
+None
+['F', '_', 'F', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'T', 'M', '_', 'M']

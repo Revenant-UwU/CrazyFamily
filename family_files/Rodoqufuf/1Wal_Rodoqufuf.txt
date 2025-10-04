@@ -1,0 +1,10 @@
+Wal
+1
+M
+{'Principal': ['Greedy', 'Manipulative'], 'Secundaria': ['Unfocused', 'Sick']}
+5
+None
+Fukaki. R, 51, M
+Huzuk. R, 73, F
+['T', 'M', '_', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', '_', 'F', 'F', '_', 'F']

@@ -1,0 +1,10 @@
+Fukaki
+51
+M
+{'Principal': ['Generous', 'Brave'], 'Secundaria': []}
+22
+Patriarca
+None
+None
+['T', '_', 'T', 'S'] 
+ ['_', 'F', '_', 'F']
