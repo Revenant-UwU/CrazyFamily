@@ -1,0 +1,11 @@
+Wani
+2
+F
+{'Principal': ['Cowardly', 'Manipulative'], 'Secundaria': []}
+8
+None
+Heloha. J, 64, M
+Kokon. J, 94, F
+['M', 'S', '_', '_', 'M', '_', '_', '_'] 
+ ['_', '_', 'S', 'T', '_', 'M', '_', 'M']
+['S', 'M', 'M', 'S', 'M', '_', 'S', 'S', 'M', 'M', 'M', 'M', 'S', 'M', 'M', 'M', 'M', 'S', 'S', 'T', 'M', 'M', '_', 'M']

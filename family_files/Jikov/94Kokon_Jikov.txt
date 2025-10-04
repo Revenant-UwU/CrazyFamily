@@ -1,0 +1,11 @@
+Kokon
+94
+F
+{'Principal': ['Manipulative', 'Generous'], 'Secundaria': []}
+13
+Patriarca
+None
+None
+['M', 'S', '_', '_', 'M'] 
+ ['T', '_', 'T', 'S', '_']
+['M', 'S', 'T', 'S', 'M']

@@ -44,10 +44,12 @@ class ADN:
             self.base1 = genotipos_a[name1][:]
             self.base2 = genotipos[name2][:]
             self.construct(name1, name2, 4)
-        elif name1 == None or name2 == None:
+        elif name1 == None and name2 == None:
             self.base1 = []
             self.base2 = []
-            if lore !=None:
+            if lore ==None:
+                pass
+            else:
                 genes= deconstusct(lore)
                 if len(genes) > 1:
                     name1 = genes[0][0]
@@ -78,20 +80,27 @@ class ADN:
         while self.b_a == None:
             self.alignments = self.find_alignments()
             self.b_a = self.best_alignment()
-            if self.b_a == None:
-                error += 1
-                self.name1 = name2
-                self.name2 = name1
-                self.base1 = genotipos[name2][:]
-                self.base2 = genotipos[name1][:]
-            if error == 2:
-                self.name1 = name2
-                self.name2 = name1
-                self.base1 = genotipos[name2][:]
-                self.base2 = genotipos[name1][:]
-                self.base2 = ['_'] + self.base2
-            if error == 3:
-                raise TypeError
+            if name1 != None and name2 !=None:
+                if self.b_a == None:
+                    error += 1
+                    self.name1 = name2
+                    self.name2 = name1
+                    self.base1 = genotipos[name2][:]
+                    self.base2 = genotipos[name1][:]
+                if error == 2:
+                    self.base2 = ['_'] + self.base2
+                if error == 3:
+                    raise TypeError
+            else:
+                if self.b_a == None:
+                    error += 1
+                    e = self.base1
+                    self.base1 = self.base2
+                    self.base2 = e
+                if error == 2:
+                    self.base2 = ['_'] + self.base2
+                if error == 3:
+                    raise TypeError
         self.best = self.b_a[0]
         self.best_to_base()
         self.genome = self.best["sequence_raw"]
@@ -160,7 +169,7 @@ class ADN:
         self.base2 = self.best['aligned_geno2']
         self.lenght = self.best['length_raw']
     def __repr__(self):
-        return f'{self.base1} \n {self.base2}'
+        return f'{self.base1} \n {self.base2}\n{self.genome}'
 
 def match_gene(seq, gene):
     n, m = len(seq), len(gene)
@@ -215,7 +224,6 @@ def deconstusct(adn:ADN):
     if len(perso_p) < 2:
         perso_p.append('Cowardly')
         Malformation = True
-    print(perso_p)
     perso_p = random.sample(perso_p, k=2)
     if len(p_s) > 3:
         m =[]
@@ -258,7 +266,10 @@ def deconstusct(adn:ADN):
         p_s = final
     return perso_p, p_s
 def create_lore(adn_m:ADN, adn_f: ADN)-> list:     
-    """Create psuedo genome for lore"""
+    """Create psuedo genome for lore
+    No more of 20 letters as result.
+    If has more _ than Letters it trys to add some variation
+    """
     void_adn = ADN()
     lower = random.choice([adn_m,adn_f])
     if lower == adn_m:
@@ -267,6 +278,7 @@ def create_lore(adn_m:ADN, adn_f: ADN)-> list:
         upper= adn_m
     upper = upper.base1
     lower = lower.base2
+    #For random variation of adn
     for i in [upper, lower]:
         for b in range(len(upper)):
             if random.choice(range(20)) >19:
@@ -279,10 +291,21 @@ def create_lore(adn_m:ADN, adn_f: ADN)-> list:
                 i[b:b] = toinsert
     void_adn.base1 = upper
     void_adn.base2 = lower
-    print(upper, lower)
+    void_adn.construct()
     lore:list =void_adn.genome
+    #Counts blank spaces on genome and adds
+    count = 0
+    for i in range(len(lore)):
+        if lore[i] == '_': count += 1 
+    if count > len(lore)//2:
+        for i in range(len(lore)):
+            s = random.choice([1,2,3,4,5])
+            if s >= 4:
+                if lore[i] == '_':
+                    lore[i] = random.choice(['F', 'M', 'S', 'T'])
     while len(lore) > 20:
         lore.remove(random.choice(lore))
+    print(lore)
     return lore
 fun = []
 # Ejemplo: generar todas las parejas (sin duplicados A+B y B+A)

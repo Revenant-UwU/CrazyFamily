@@ -1,0 +1,11 @@
+Garuhim
+1
+M
+{'Principal': ['Manipulative', 'Cowardly'], 'Secundaria': []}
+8
+None
+Heloha. J, 64, M
+Kokon. J, 94, F
+['M', 'S', '_', '_', 'M', '_', '_', '_'] 
+ ['_', '_', 'M', 'T', '_', 'M', '_', 'M']
+['S', 'S', 'M', 'S', 'M', '_', 'M', 'M', '_', 'M', '_', 'M', 'M', 'S', 'S', 'M', 'M', 'S', 'M', 'T', 'M', 'M', '_', 'M']

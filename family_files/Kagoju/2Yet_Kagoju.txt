@@ -1,0 +1,11 @@
+Yet
+2
+F
+{'Principal': ['Greedy', 'Brave'], 'Secundaria': ['Malformation', 'Hermafrodite', 'Fragile']}
+-16
+None
+Nifobo. K, 112, M
+Kudame. K, 98, F
+['F', 'T', '_', 'M', '_', 'M'] 
+ ['_', '_', 'F', '_', 'F', '_']
+['F', 'F', 'F', 'F', 'F', '_', '_', '_', 'F', 'F', '_', 'F', 'F', 'F', '_', 'F', 'F', 'T', 'F', 'M', 'F', 'M']

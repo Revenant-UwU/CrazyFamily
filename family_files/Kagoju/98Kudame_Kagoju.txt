@@ -1,0 +1,11 @@
+Kudame
+98
+F
+{'Principal': ['Brave', 'Greedy'], 'Secundaria': []}
+19
+Patriarca
+None
+None
+['F', '_', 'F', '_'] 
+ ['S', 'F', '_', 'M']
+['F', 'F', 'F', 'M']

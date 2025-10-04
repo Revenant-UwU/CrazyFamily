@@ -1,0 +1,11 @@
+Jenugi
+2
+F
+{'Principal': ['Cowardly', 'Manipulative'], 'Secundaria': ['Lustful', 'Edipo-complex', 'Unfocused']}
+-35
+None
+Mexobe. V, 88, M
+Rinahok. V, 88, F
+['_', '_', 'T', 'M', '_'] 
+ ['M', 'S', '_', '_', 'M']
+['T', 'T', '_', 'M', 'T', '_', 'T', 'T', '_', 'M', 'M', 'M', 'M', '_', '_', '_', 'M', 'S', 'T', 'M', 'M']

@@ -1,0 +1,11 @@
+Heloha
+64
+M
+{'Principal': ['Generous', 'Manipulative'], 'Secundaria': []}
+13
+Patriarca
+None
+None
+['T', '_', 'T', 'S', '_'] 
+ ['M', 'S', '_', '_', 'M']
+['T', 'S', 'T', 'S', 'M']
