@@ -1,0 +1,11 @@
+Pideta
+68
+M
+{'Principal': ['Honest', 'Manipulative'], 'Secundaria': []}
+11
+Patriarca
+None
+None
+['_', 'T', 'M', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'M', 'S', '_', '_', 'M']
+['_', 'T', 'M', 'M', 'S', '_', '_', 'M']

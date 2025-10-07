@@ -1,0 +1,11 @@
+Vaw
+3
+M
+{'Principal': ['Brave', 'Generous'], 'Secundaria': ['Focused', 'Depresive', 'Creative']}
+48
+None
+Fedoxuv. P, 97, M
+Xuduxa. P, 79, F
+['M', 'M', 'S', '_', '_', 'M'] 
+ ['_', '_', 'F', '_', 'F', '_']
+['_', 'M', 'M', 'M', 'M', '_', '_', '_', '_', '_', '_', '_', 'M', 'M', 'M', '_', 'M', 'M', 'S', '_', 'F', 'M']

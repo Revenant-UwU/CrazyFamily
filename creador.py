@@ -73,15 +73,20 @@ def random_name(length_n):
     s=''
     return s.join(name)
 class Persona:
-    def __init__(self, nombre:str, nombre_f:str, edad:int, genero:str, personalidad:Personalidad , oficio:str , madre, padre, moralidad = None):
+    def __init__(self, nombre:str, Family, edad:int, genero:str, personalidad:Personalidad , oficio:str , madre, padre, moralidad = None):
         self.nombre = nombre
-        self.nombre_familia = nombre_f
+        self.nombre_familia = Family.nombre_familia
+        self.familia:Familia = Family
         self.edad = int(edad)
         self.genero = genero
         self.oficio= oficio
         self.madre:Persona = madre
         self.padre:Persona = padre
         self.adn: ADN= None
+        self.social = {'Liked': [], 'Disliked': []}
+        hambre = 50
+        sed =50
+        self.estomago = [hambre, sed]
         self.health_max = 100
         if personalidad != None:
             self.personalidad:Personalidad = personalidad #Primaria list, secundaria list too 
@@ -120,14 +125,31 @@ class Persona:
     def __repr__(self):
         return f"{self.nombre}. {self.nombre_familia[0]}"
     def muerte(self):
-        if self.healt <=0:
+        hambre = self.estomago[0]
+        sed = self.estomago[1]
+        for i in [hambre, sed]:
+            if i<10:
+                if i <3:
+                    self.healt -=10
+                else:
+                    self.healt -=random.choice(range(2,5))
+        if self.healt <=0 :
+            print('\n', '*'*60)
+            print(f' \t No puede ser \n \t \t {self} MURIO ' )
+            print('\n', '*'*60)
             NPC_vivos.remove(self)
             NPC_muertos.append(self)
-        else:
-            if self.healt + 2 > self.health_max:
+            self.familia.remove(self)
+        elif hambre > 0 and sed > 0:
+            h:float = self.health_max * 0.02
+            if self.healt + h > self.health_max:
                 self.healt = self.health_max
             else:
-                self.healt += 2
+                if self.healt >= self.health_max * 0.2:
+                    self.healt += h
+                else:
+                    self.healt += self.healt
+        for i in [0,1]: self.estomago[i] -= random.randrange(5,20)
     def calculo_morlidad(self):
         m = 0
         p = []
@@ -180,7 +202,7 @@ class Pareja(Persona):
     def __init__(self, persona:Persona, pareja = None):
         if not isinstance(persona, Persona) and not isinstance(persona, Animal):
             raise TypeError(f"{persona}, is not a subclass of Persona or Animal")
-        super().__init__(persona.nombre, persona.nombre_familia, persona.edad, persona.genero, persona.personalidad, persona.oficio, persona.madre, persona.padre)
+        super().__init__(persona.nombre, persona.familia, persona.edad, persona.genero, persona.personalidad, persona.oficio, persona.madre, persona.padre)
         self.pareja:Pareja = pareja
         #Ahora busca donde estan todos sus hijos para remplazar el padre/madre por ellos.
 
@@ -226,8 +248,8 @@ class Familia:
         else:
             i = 1
             a = 0
-        Patriarca = Persona(nombre, self.nombre_familia, random.randint(45,120), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": []}, "Patriarca", None, None)
-        Matriarca = Persona(nombrem, self.nombre_familia, random.randint(45,120), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": []}, "Patriarca", None, None)
+        Patriarca = Persona(nombre, self, random.randint(45,120), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": []}, "Patriarca", None, None)
+        Matriarca = Persona(nombrem, self, random.randint(45,120), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": []}, "Patriarca", None, None)
         self.miembros.append(Patriarca)
         self.miembros.append(Matriarca)
         Familias.append(self)
@@ -236,6 +258,16 @@ class Familia:
             i: Persona
             for i in self.miembros:
                 i.edad += 1
+    def add(self, persona:Persona):
+        if persona.familia != self:
+            raise KeyError(f'{persona} has another family: {persona.familia}')
+        if persona in self.miembros:
+            raise ValueError(f'{persona} already in famiily')
+        self.miembros.append(persona)
+    def remove(self,persona:Persona):
+        if persona not in self.miembros:
+            raise ValueError(f'{persona} not in famiily')
+        self.miembros.remove(persona)
     def __repr__(self):
         return f'{self.nombre_familia}, {self.funcionamiento}, {len(self.miembros)}'
 def selector_p_prin():
@@ -375,9 +407,9 @@ def born(pregnant:dict):
             name = random_name(random.randrange(3,8))
             dad:Persona = dad
             gender = random.choice(['M', 'F'])
-            if mom.nombre_familia != dad.nombre_familia:
-                mom_f = enuentra_familia(mom.nombre_familia)
-                dad_f = enuentra_familia(dad.nombre_familia)
+            if mom.familia != dad.familia:
+                mom_f:Familia = mom.familia
+                dad_f:Familia = dad.familia
                 if mom_f.funcionamiento != dad_f.funcionamiento:
                     f = random.choice([mom_f, dad_f])
                     if f == mom_f:
@@ -402,10 +434,9 @@ def born(pregnant:dict):
                     else:
                         son_f = not_f
             else:
-                son_f = enuentra_familia(mom.nombre_familia)
-            kid = Persona(name, son_f.nombre_familia, str(0), gender, None, None, mom, dad)
-            son_f.miembros.append(kid)
-           
+                son_f = mom.familia
+            kid = Persona(name, son_f, str(0), gender, None, None, mom, dad)
+            son_f.add(kid)
     galls = pregnant.keys()
     for i in galls:
         mom:Persona = i

@@ -1,0 +1,11 @@
+Gugoyi
+107
+F
+{'Principal': ['Brave', 'Generous'], 'Secundaria': []}
+22
+Patriarca
+None
+None
+['F', '_', 'F', '_', '_', '_'] 
+ ['_', 'T', '_', 'T', 'S', '_']
+['F', 'T', 'F', 'T', 'S', '_']

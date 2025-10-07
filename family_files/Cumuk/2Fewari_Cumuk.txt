@@ -1,0 +1,11 @@
+Fewari
+2
+M
+{'Principal': ['Manipulative', 'Cowardly'], 'Secundaria': ['Masked', 'Albino']}
+-14
+None
+Pideta. C, 68, M
+Zikor. C, 99, F
+['_', 'T', 'M', '_', '_', '_', '_'] 
+ ['_', 'M', 'T', '_', 'M', '_', 'M']
+['F', 'M', 'F', '_', 'F', 'F', 'F', 'M', 'M', 'F', 'F', 'T', 'F', 'F', 'M', 'F', '_', 'T', 'M', '_', 'M', '_', 'M']

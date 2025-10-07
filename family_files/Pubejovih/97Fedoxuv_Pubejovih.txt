@@ -1,0 +1,11 @@
+Fedoxuv
+97
+M
+{'Principal': ['Cowardly', 'Generous'], 'Secundaria': []}
+15
+Patriarca
+None
+None
+['T', '_', 'M', '_', 'M', '_', '_'] 
+ ['_', '_', 'T', '_', 'T', 'S', '_']
+['T', '_', 'M', '_', 'M', 'S', '_']

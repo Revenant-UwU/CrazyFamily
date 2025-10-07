@@ -1,0 +1,11 @@
+Dobel
+2
+M
+{'Principal': ['Greedy', 'Brave'], 'Secundaria': ['Inocent', 'Anger-Issues', 'Disasiotive']}
+-26
+None
+Fedoxuv. P, 97, M
+Xuduxa. P, 79, F
+['_', 'M', 'S', '_', '_', 'M'] 
+ ['_', '_', '_', 'T', 'M', '_']
+['_', 'M', 'M', '_', 'T', '_', '_', '_', '_', 'M', 'M', 'T', 'M', '_', '_', 'M', '_', 'M', 'S', 'T', 'M', 'M']

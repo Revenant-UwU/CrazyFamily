@@ -1,0 +1,11 @@
+Rulac
+1
+M
+{'Principal': ['Honest', 'Manipulative'], 'Secundaria': ['Pacifist', 'Charming']}
+39
+None
+Hoxecum. Y, 90, M
+Gugoyi. Y, 107, F
+['_', '_', 'T', 'M', '_', '_'] 
+ ['_', 'T', '_', 'T', 'S', '_']
+['S', 'T', '_', 'T', 'S', 'T', 'T', 'T', 'T', '_', 'S', 'S', '_', '_', 'T', 'T', '_', 'T', 'T', 'M', 'S', '_']

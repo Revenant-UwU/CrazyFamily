@@ -1,0 +1,11 @@
+Yusaz
+1
+M
+{'Principal': ['Brave', 'Honest'], 'Secundaria': ['Disasiotive', 'Depending', 'Violent']}
+-29
+None
+Fedoxuv. P, 97, M
+Xuduxa. P, 79, F
+['M', 'T', '_', 'M', '_', 'M'] 
+ ['_', '_', '_', 'T', 'M', '_']
+['M', '_', 'M', 'T', '_', '_', '_', 'M', 'T', '_', 'M', 'M', '_', 'M', '_', 'M', 'M', 'T', '_', 'M', 'M', 'M']

@@ -1,0 +1,11 @@
+Zikor
+99
+F
+{'Principal': ['Manipulative', 'Honest'], 'Secundaria': []}
+11
+Patriarca
+None
+None
+['M', 'S', '_', '_', 'M'] 
+ ['_', '_', 'T', 'M', '_']
+['M', 'S', 'T', 'M', 'M']
