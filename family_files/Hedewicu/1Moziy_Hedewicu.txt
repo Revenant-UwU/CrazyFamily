@@ -1,0 +1,11 @@
+Moziy
+1
+M
+{'Principal': ['Brave', 'Greedy'], 'Secundaria': ['Heavy-malformation', 'Anger-Issues', 'Malformation']}
+31
+oficios.Void
+Woxuc. H, 123, M
+Socem. H, 112, F
+['_', 'F', '_', 'F', '_'] 
+ ['T', '_', 'M', '_', 'M']
+['_', 'F', 'F', 'F', '_', 'F', 'F', '_', 'F', 'F', 'F', 'F', 'F', '_', 'F', 'F', 'T', 'F', 'M', 'F', 'M']

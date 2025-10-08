@@ -1,0 +1,11 @@
+Rahod
+1
+F
+{'Principal': ['Manipulative', 'Brave'], 'Secundaria': ['Heavy-malformation', 'Sweat home alabama']}
+3
+oficios.Void
+Binocax. P, 116, M
+Zagow. P, 68, F
+['_', 'T', 'M', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'M', 'S', '_', '_', 'M']
+['S', 'F', 'F', 'M', 'S', 'S', 'S', 'F', 'S', 'S', '_', 'F', 'S', '_', 'S', 'F', '_', 'T', 'M', 'M', 'S', '_', '_', 'M']

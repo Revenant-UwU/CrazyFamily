@@ -1,0 +1,11 @@
+Fubaw
+7
+F
+{'Principal': ['Manipulative', 'Brave'], 'Secundaria': ['Depresive', 'Albino']}
+2
+oficios.Void
+Bupet. R, 102, M
+Kebareh. R, 94, F
+['F', '_', 'F', '_', '_', '_'] 
+ ['_', 'M', '_', 'T', 'M', '_']
+['T', '_', 'M', 'M', '_', 'T', '_', 'T', 'T', '_', 'M', 'M', 'T', '_', '_', 'M', 'F', 'M', 'F', 'T', 'M', '_']

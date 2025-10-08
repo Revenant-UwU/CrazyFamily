@@ -1,7 +1,14 @@
 import random
 from typing import TypedDict, List
 import numpy as np
-
+from enum import Enum
+class oficios(Enum):
+    Void = 0
+    Patriarca= 1
+    Matriarca= 2
+    Cazador= 3
+    Buzcador_a= 4
+    Estudiante= 5
 class Personalidad(TypedDict):
     Principal: List[any]
     Secundaria: List[any]
@@ -73,13 +80,18 @@ def random_name(length_n):
     s=''
     return s.join(name)
 class Persona:
-    def __init__(self, nombre:str, Family, edad:int, genero:str, personalidad:Personalidad , oficio:str , madre, padre, moralidad = None):
+    def __init__(self, nombre:str, Family, edad:int, genero:str, personalidad:Personalidad , oficio:oficios , madre, padre, moralidad = None):
         self.nombre = nombre
         self.nombre_familia = Family.nombre_familia
         self.familia:Familia = Family
         self.edad = int(edad)
         self.genero = genero
-        self.oficio= oficio
+        if oficio == None:
+            self.oficio:oficios = oficios.Void
+        elif oficio in oficios.__members__:
+            self.oficio:oficios = oficios[oficio]
+        else:
+            raise TypeError(f'Wrong office mf {self},{oficio}')
         self.madre:Persona = madre
         self.padre:Persona = padre
         self.adn: ADN= None
@@ -136,12 +148,15 @@ class Persona:
         if self.healt <=0 :
             print('\n', '*'*60)
             print(f' \t No puede ser \n \t \t {self} MURIO ' )
+            print('edad: ',self.edad, '\nestomago', self.estomago,'\nsalud', self.healt,'\nmax salud', self.health_max,'\npersonalidad', self.personalidad)
             print('\n', '*'*60)
             NPC_vivos.remove(self)
             NPC_muertos.append(self)
             self.familia.remove(self)
+            if self.oficio in [oficios.Matriarca, oficios.Patriarca]:
+                self.familia.choice_new_lider(self)
         elif hambre > 0 and sed > 0:
-            h:float = self.health_max * 0.02
+            h:float = self.health_max * (0.02-(self.edad/1000))
             if self.healt + h > self.health_max:
                 self.healt = self.health_max
             else:
@@ -149,7 +164,7 @@ class Persona:
                     self.healt += h
                 else:
                     self.healt += self.healt
-        for i in [0,1]: self.estomago[i] -= random.randrange(5,20)
+        for i in [0,1]: self.estomago[i] -= (random.randrange(5+(2**(self.edad//20)),20+(2**(self.edad//20))))
     def calculo_morlidad(self):
         m = 0
         p = []
@@ -249,7 +264,7 @@ class Familia:
             i = 1
             a = 0
         Patriarca = Persona(nombre, self, random.randint(45,120), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": []}, "Patriarca", None, None)
-        Matriarca = Persona(nombrem, self, random.randint(45,120), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": []}, "Patriarca", None, None)
+        Matriarca = Persona(nombrem, self, random.randint(45,120), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": []}, "Matriarca", None, None)
         self.miembros.append(Patriarca)
         self.miembros.append(Matriarca)
         Familias.append(self)
@@ -268,6 +283,33 @@ class Familia:
         if persona not in self.miembros:
             raise ValueError(f'{persona} not in famiily')
         self.miembros.remove(persona)
+    def choice_new_lider(self, persona:Persona):
+        if persona.oficio in [oficios.Patriarca, oficios.Matriarca]:
+            sortage = sorted(self.miembros, key=lambda p: p.edad, reverse=True)
+            candidato = None
+            i = 0
+            try:
+                if persona.oficio == oficios.Patriarca:
+                    while candidato == None:
+                        if sortage[i].genero != 'M':
+                            i+=1
+                        else:
+                            candidato = sortage[i]
+                        if i >= len(sortage):
+                            raise IndexError
+                else:
+                    while candidato == None:
+                        if sortage[i].genero != 'F':
+                            i+=1
+                        else:
+                            candidato = sortage[i]
+                        if i >= len(sortage):
+                            raise IndexError
+                candidato.oficio = persona.oficio
+            except:
+                print('No abilavble candidats after ', persona,' died ', persona.oficio.name, ' is empty now')
+        else:
+            raise TypeError
     def __repr__(self):
         return f'{self.nombre_familia}, {self.funcionamiento}, {len(self.miembros)}'
 def selector_p_prin():

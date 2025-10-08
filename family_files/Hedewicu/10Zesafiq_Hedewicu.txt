@@ -1,0 +1,11 @@
+Zesafiq
+10
+F
+{'Principal': ['Cowardly', 'Generous'], 'Secundaria': ['Shy', 'Confident']}
+14
+oficios.Void
+Woxuc. H, 123, M
+Socem. H, 112, F
+['T', '_', 'T', 'M', '_', '_'] 
+ ['_', 'T', '_', 'T', 'S', '_']
+['T', '_', '_', 'T', 'T', 'T', '_', 'T', '_', '_', 'T', 'S', 'T', 'S', '_', '_', 'T', 'T', 'T', 'M', 'S', '_']

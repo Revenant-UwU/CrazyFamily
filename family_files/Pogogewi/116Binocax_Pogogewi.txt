@@ -1,0 +1,11 @@
+Binocax
+116
+M
+{'Principal': ['Honest', 'Greedy'], 'Secundaria': []}
+15
+oficios.Patriarca
+None
+None
+['_', 'T', 'M', '_', '_', '_', '_'] 
+ ['_', '_', '_', 'S', 'F', '_', 'M']
+['_', 'T', 'M', 'S', 'F', '_', 'M']

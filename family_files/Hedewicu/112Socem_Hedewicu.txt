@@ -1,9 +1,9 @@
-Gugoyi
-107
+Socem
+112
 F
 {'Principal': ['Brave', 'Generous'], 'Secundaria': []}
 22
-Patriarca
+oficios.Matriarca
 None
 None
 ['F', '_', 'F', '_', '_', '_'] 

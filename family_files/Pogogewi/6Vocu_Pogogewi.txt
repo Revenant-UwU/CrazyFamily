@@ -1,0 +1,11 @@
+Vocu
+6
+M
+{'Principal': ['Manipulative', 'Brave'], 'Secundaria': ['Hermafrodite', 'Anger-Issues', 'Sick']}
+-8
+oficios.Void
+Binocax. P, 116, M
+Zagow. P, 68, F
+['F', 'M', 'S', '_', '_', 'M', '_'] 
+ ['_', '_', '_', 'S', 'F', '_', 'M']
+['F', 'S', '_', '_', 'F', 'S', '_', 'F', 'S', 'M', 'F', 'S', '_', '_', 'M', 'F', 'F', 'M', 'S', 'S', 'F', 'M', 'M']

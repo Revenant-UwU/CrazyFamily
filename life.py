@@ -17,12 +17,21 @@ class lugar:
         self.personas = []
     def Actions(self, persona:Persona):
         persona:Persona
+        if persona.estomago[0] <30 or persona.estomago[0] <30:
+            pass #hay que poner a donde van dependindo de su rol
         if persona in NPC_vivos:
-            accion = random.choice(self.acciones)
+            if persona.estomago[0] <30 or persona.estomago[0] <30:
+                accion = 'eat'
+            else:
+                accion = random.choice(self.acciones)
         else:
             accion = 'rot'
         if accion == 'talk':
             print(f'{persona} talked, they said this is their stomac: {persona.estomago}')
+        if accion == "rot":
+            print(persona, ' is rotting in place')
+            for i in self.personas:
+                i.healt -= random.randrange(1,3)
         if accion == 'move':
             r_where_to_move(persona, self)
         return accion
@@ -72,7 +81,7 @@ class casa(lugar):
             else:
                 accion = super().Actions(persona)
         if accion == 'eat':
-            for i in [0,1]: persona.estomago[i] += random.randrange(8,15)
+            for i in [0,1]: persona.estomago[i] += random.randrange(22,35)
             for i in [0,1]: self.comida[i] -= 1
             print(f'{persona} esta comiendo')
 class escuela(lugar):
@@ -118,12 +127,14 @@ def run_main(years:int):
             month = Months[Trun]
             if NPC_vivos == []:
                 for i in range(random.randrange(1,3)): 
-                    print('\t'*random.randrange(0,3),'all are dead '*(Trun+1*Year))
+                    print('\t'*random.randrange(0,3),'\033[31mall are dead\033[0m '*(Trun+1*Year))
                     time.sleep(1/(Trun+1*Year))
             else:
                 print('\n', '-'*60, '\n')
                 print('\t', month, str(Year+1), '\n \n')
                 for i in todos_lugares:
+                    if isinstance(i,casa):
+                        for c in [0,1]: i.comida[c] += 1
                     for b in i.personas:
                         if b in NPC_vivos:
                             b.muerte()
@@ -138,10 +149,24 @@ def run_main(years:int):
 
 
 esc = escuela(random_name(3)+ ''+ random_name(5))
+#esc =  escuela('Saint Boniface')
 lugares = {"Casas":[], "Escuela":  esc}
 todos_lugares = [esc]
 if __name__ == '__main__':
-    for i in ['SAm', 'Pam', 'Kam']:
+    #Uno =  Familia('Neri')
+    #dos = Familia('Valentin')
+    #Jorge = Persona('Jorge', Uno, 20, 'M', {'Principal':['Generous', 'Honest'], 'Secundaria':[]}, 'Estudiante', None, None, None)
+    #Anita =  Persona('Anita', dos, 25, 'F', {'Principal':['Generous', 'Honest'], 'Secundaria':['Charming']} ,'Estudiante', None, None, None )
+    #Kylian= Animal('Kilian da dog')
+    #for i in range(10):
+   #     print('we had s word: ', i, ' times')
+    #    print(SEXO([Anita, Jorge]))
+    #Uno.add(Jorge)
+    #dos.add(Anita)
+    
+    #b = casa(Uno.nombre_familia, Uno)
+    #c = casa(dos.nombre_familia, dos)
+    for i in ['ll','ghjg', 'iooiu']:
         i = Familia(i)
         i.constructor_familia()
         b = casa(i.nombre_familia, i)
@@ -152,4 +177,4 @@ if __name__ == '__main__':
     print(lugares)
     for i in lugares['Casas']:
         print(i.show())
-    run_main(20)
+    run_main(30)

@@ -1,0 +1,11 @@
+Yoke
+3
+F
+{'Principal': ['Greedy', 'Cowardly'], 'Secundaria': ['Masked', 'Lustful', 'Sadistic']}
+-8
+oficios.Void
+Binocax. P, 116, M
+Zagow. P, 68, F
+['_', 'T', 'M', '_', '_', '_', '_', '_'] 
+ ['_', '_', 'T', 'T', '_', 'M', '_', 'M']
+['_', '_', 'T', '_', 'M', '_', 'T', '_', 'M', 'T', '_', 'T', 'T', 'M', 'T', '_', '_', 'T', 'M', 'T', '_', 'M', '_', 'M']

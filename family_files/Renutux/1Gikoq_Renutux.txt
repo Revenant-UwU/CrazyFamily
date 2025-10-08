@@ -1,0 +1,11 @@
+Gikoq
+1
+M
+{'Principal': ['Honest', 'Manipulative'], 'Secundaria': []}
+11
+oficios.Void
+Yolarab. R, 13, M
+Kebareh. R, 94, F
+['M', 'M', 'S', '_', '_', 'M'] 
+ ['_', '_', '_', 'T', 'M', '_']
+['_', '_', 'S', 'S', 'M', '_', 'M', 'S', 'S', 'S', 'M', 'M', 'S', 'S', 'S', 'M', 'M', 'M', 'S', 'T', 'M', 'M']

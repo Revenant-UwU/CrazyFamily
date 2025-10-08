@@ -1,0 +1,11 @@
+Subufe
+12
+F
+{'Principal': ['Greedy', 'Brave'], 'Secundaria': ['Old', 'Heavy-malformation', 'Malformation']}
+41
+oficios.Void
+Woxuc. H, 123, M
+Socem. H, 112, F
+['F', 'T', '_', 'M', '_', 'M'] 
+ ['_', '_', 'F', '_', 'F', '_']
+['_', 'F', '_', 'F', 'F', 'F', 'F', '_', '_', 'F', '_', '_', 'F', '_', 'F', 'F', 'F', 'T', 'F', 'M', 'F', 'M']

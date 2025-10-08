@@ -1,0 +1,11 @@
+Bupet
+102
+M
+{'Principal': ['Cowardly', 'Manipulative'], 'Secundaria': []}
+8
+oficios.Patriarca
+None
+None
+['T', '_', 'M', '_', 'M', '_', '_', '_', '_', '_'] 
+ ['_', '_', '_', '_', '_', 'M', 'S', '_', '_', 'M']
+['T', '_', 'M', '_', 'M', 'M', 'S', '_', '_', 'M']

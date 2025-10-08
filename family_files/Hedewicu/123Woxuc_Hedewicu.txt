@@ -1,9 +1,9 @@
-Hoxecum
-90
+Woxuc
+123
 M
 {'Principal': ['Generous', 'Brave'], 'Secundaria': []}
 22
-Patriarca
+oficios.Patriarca
 None
 None
 ['T', '_', 'T', 'S', '_'] 

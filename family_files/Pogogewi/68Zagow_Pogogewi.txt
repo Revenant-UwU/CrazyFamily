@@ -1,0 +1,11 @@
+Zagow
+68
+F
+{'Principal': ['Greedy', 'Honest'], 'Secundaria': []}
+15
+oficios.Matriarca
+None
+None
+['S', 'F', '_', 'M', '_', '_'] 
+ ['_', '_', '_', 'T', 'M', '_']
+['S', 'F', '_', 'M', 'M', '_']
