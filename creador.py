@@ -133,8 +133,14 @@ class Persona:
         self.healt = self.health_max
         NPC_vivos.append(self)
     def __str__(self):
-        return f"{self.nombre}. {self.nombre_familia[0]}, {self.edad}, {self.genero}"
+        nombre = self.nombre + '. ' + self.nombre_familia
+        if self.healt > 0:
+            if self.oficio in [oficios.Patriarca, oficios.Matriarca]:
+                nombre = '\033[32m' + nombre + '\033[0m' 
+        return f"{nombre}, {self.edad}, {self.genero}"
     def __repr__(self):
+        if self.oficio in [oficios.Patriarca, oficios.Matriarca]:
+            return f'\033[32m{self.nombre}. {self.nombre_familia}\033[0m'
         return f"{self.nombre}. {self.nombre_familia[0]}"
     def muerte(self):
         hambre = self.estomago[0]
@@ -146,10 +152,10 @@ class Persona:
                 else:
                     self.healt -=random.choice(range(2,5))
         if self.healt <=0 :
-            print('\n', '*'*60)
-            print(f' \t No puede ser \n \t \t {self} MURIO ' )
+            print('\n\033[31m', '*'*60)
+            print(f' \t No puede ser \n \t \t {self}\033[31m MURIO ' )
             print('edad: ',self.edad, '\nestomago', self.estomago,'\nsalud', self.healt,'\nmax salud', self.health_max,'\npersonalidad', self.personalidad)
-            print('\n', '*'*60)
+            print('\n', '*'*60, '\033[0m')
             NPC_vivos.remove(self)
             NPC_muertos.append(self)
             self.familia.remove(self)

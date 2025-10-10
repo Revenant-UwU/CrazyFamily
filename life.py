@@ -8,7 +8,7 @@ All npc can do 4 actions per month.
 '''
 turn = 0
 month = ''
-Months = ('Vasant','Moonson', 'Sharad rtu', 'Saedee')
+Months = ('\033[32mVasant\033[0m','\033[34mMoonson\033[0m', '\033[33mSharad\033[0m', '\033[36mSaedee\033[0m')
 class lugar:
     def __init__(self, nombre):
         self.sweet_text:str = ''
@@ -29,7 +29,7 @@ class lugar:
         if accion == 'talk':
             print(f'{persona} talked, they said this is their stomac: {persona.estomago}')
         if accion == "rot":
-            print(persona, ' is rotting in place')
+            print('\033[31m',persona, 'is rotting in place\033[0m')
             for i in self.personas:
                 i.healt -= random.randrange(1,3)
         if accion == 'move':
@@ -131,7 +131,7 @@ def run_main(years:int):
                     time.sleep(1/(Trun+1*Year))
             else:
                 print('\n', '-'*60, '\n')
-                print('\t', month, str(Year+1), '\n \n')
+                print('\t\033[4m', month, str(Year+1), '\033[0m\n \n')
                 for i in todos_lugares:
                     if isinstance(i,casa):
                         for c in [0,1]: i.comida[c] += 1
@@ -177,4 +177,4 @@ if __name__ == '__main__':
     print(lugares)
     for i in lugares['Casas']:
         print(i.show())
-    run_main(30)
+    run_main(15)
