@@ -329,8 +329,9 @@ mental = perosnalidades_s["Mental"]
 fisca = perosnalidades_s["Fisical"]
 sexual = perosnalidades_s["Sexual"]
 talent = perosnalidades_s["Talent"]
-perosnalidades_s_value = [] + mental + fisca + sexual + talent
-per = [] + mental + fisca + sexual + talent 
+perosnalidades_s_value = () + mental + fisca + sexual + talent
+per = () + mental + fisca + sexual + talent 
+per = list(per)
 random.shuffle(per)
 b=0
 adn_dic = {}

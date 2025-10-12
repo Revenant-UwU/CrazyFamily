@@ -23,7 +23,7 @@ def normalizador_dic(dic):
     result= {i: round(p, 2) for i, p in zip(x_new, y_new)}
     return result
 
-perosnalidades_p =["Generous", "Brave", "Honest", "Greedy", "Cowardly", "Manipulative"]
+perosnalidades_p =("Generous", "Brave", "Honest", "Greedy", "Cowardly", "Manipulative")
 morlidad_v= {"Generous": 10, "Brave": 12, "Honest": 8, "Greedy":7, "Cowardly":5, "Manipulative":3,
              "Confident":4, "Shy": -5, "Repulsive": -9, "Charming":random.choice([0, 8, -11]), "Lustful":random.choice([11 ,-8,0, 8, -11]),
              "Inocent":random.choice([0,6, -5]), "Sadistic": -12, "Masochistic":-12, "Violent": -20, "Pacifist": 20,
@@ -36,10 +36,10 @@ morlidad_v= {"Generous": 10, "Brave": 12, "Honest": 8, "Greedy":7, "Cowardly":5,
              "Depresive": random.randrange(-5, 5), "Masked": random.randrange(-30,0), "Depending": 1, 
              "Hero-complex": random.choice([-30,30]), "Edipo-complex": random.randrange(-30, 3)
              }
-perosnalidades_s = {"Mental": ["Focused", "Unfocused", "Disasiotive", "Anger-Issues", "Creative", "Depresive", "Masked", "Depending", "Hero-complex", "Edipo-complex"], 
-                    "Fisical": ["Healty", "Sick", "Albino", "Malformation", "Heavy-malformation", "Hermafrodite", "Younght", "Old", "Infertil", "Fragile"], 
-                    "Sexual": ["Chad", "Twink", "Sex-deprived", "Pedofile", "Sex-apeal", "Incel", "Femcel", "Sweat home alabama", "Zoofile", "Futa", "Gay"],
-                    "Talent": ["Confident", "Shy", "Repulsive" , "Charming" ,"Lustful","Inocent" , "Sadistic", "Masochistic", "Violent", "Pacifist"]} #Charming used as fetile 
+perosnalidades_s = {"Mental": ("Focused", "Unfocused", "Disasiotive", "Anger-Issues", "Creative", "Depresive", "Masked", "Depending", "Hero-complex", "Edipo-complex"), 
+                    "Fisical": ("Healty", "Sick", "Albino", "Malformation", "Heavy-malformation", "Hermafrodite", "Younght", "Old", "Infertil", "Fragile"), 
+                    "Sexual": ("Chad", "Twink", "Sex-deprived", "Pedofile", "Sex-apeal", "Incel", "Femcel", "Sweat home alabama", "Zoofile", "Futa", "Gay"),
+                    "Talent": ("Confident", "Shy", "Repulsive" , "Charming" ,"Lustful","Inocent" , "Sadistic", "Masochistic", "Violent", "Pacifist")} #Charming used as fetile 
 from adn_code import *
 original_1 = {0:0, 4:1 , 9:5, 12:7, 14:13, 16:20, 18:22, 25:20, 30:18, 40:7, 50:5, 80:1, 300:1}
 original_2={0:0, 9:1, 11:10, 20:25, 40:20, 50:10, 100:1, 300:1}
@@ -137,10 +137,14 @@ class Persona:
         if self.healt > 0:
             if self.oficio in [oficios.Patriarca, oficios.Matriarca]:
                 nombre = '\033[32m' + nombre + '\033[0m' 
+            elif self.oficio in [oficios.Cazador, oficios.Buzcador_a]:
+                nombre = '\033[35m' + nombre + '\033[0m' 
         return f"{nombre}, {self.edad}, {self.genero}"
     def __repr__(self):
         if self.oficio in [oficios.Patriarca, oficios.Matriarca]:
             return f'\033[32m{self.nombre}. {self.nombre_familia}\033[0m'
+        elif self.oficio in [oficios.Cazador, oficios.Buzcador_a]:
+            return f'\033[35m{self.nombre}. {self.nombre_familia}\033[0m'
         return f"{self.nombre}. {self.nombre_familia[0]}"
     def muerte(self):
         hambre = self.estomago[0]
@@ -170,7 +174,7 @@ class Persona:
                     self.healt += h
                 else:
                     self.healt += self.healt
-        for i in [0,1]: self.estomago[i] -= (random.randrange(5+(2**(self.edad//20)),20+(2**(self.edad//20))))
+        for i in [0,1]: self.estomago[i] -= (random.randrange(5+(2*(self.edad//20)),15+(2*(self.edad//20))))
     def calculo_morlidad(self):
         m = 0
         p = []
@@ -269,12 +273,12 @@ class Familia:
         else:
             i = 1
             a = 0
-        Patriarca = Persona(nombre, self, random.randint(45,120), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": []}, "Patriarca", None, None)
-        Matriarca = Persona(nombrem, self, random.randint(45,120), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": []}, "Matriarca", None, None)
+        Patriarca = Persona(nombre, self, random.randint(45,80), 'M', {"Principal": [self.personalidad[i], self.personalidad[a]], "Secundaria": []}, "Patriarca", None, None)
+        Matriarca = Persona(nombrem, self, random.randint(45,80), 'F', {"Principal": [self.personalidad[a], self.personalidad[i]], "Secundaria": []}, "Matriarca", None, None)
         self.miembros.append(Patriarca)
         self.miembros.append(Matriarca)
         Familias.append(self)
-        while len(self.miembros) <= 4:
+        while len(self.miembros) <= 8:
             born(SEXO(self.miembros))
             i: Persona
             for i in self.miembros:
@@ -316,6 +320,13 @@ class Familia:
                 print('No abilavble candidats after ', persona,' died ', persona.oficio.name, ' is empty now')
         else:
             raise TypeError
+    def count_ofices(self,ofice):
+        i: Persona
+        b = 0
+        for i in self.miembros:
+            if i.oficio == ofice:
+                b +=1
+        return b
     def __repr__(self):
         return f'{self.nombre_familia}, {self.funcionamiento}, {len(self.miembros)}'
 def selector_p_prin():
